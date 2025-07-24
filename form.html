@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Restaurant - Prix Fixe Paris</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 data-translate="siteTitle">Prix Fixe Paris</h1>
+                <span class="tagline" data-translate="tagline">Restaurants • Menu du Jour • Formule du Midi</span>
+            </div>
+            <div class="header-controls">
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="fr">FR</button>
+                    <button class="language-btn" data-lang="en">EN</button>
+                </div>
+                <div class="theme-switcher">
+                    <button class="theme-toggle" title="Toggle theme">
+                        <span class="theme-icon sun">☀️</span>
+                        <span class="theme-icon moon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link" data-translate="navHome">Accueil</a>
+                <a href="about.html" class="nav-link" data-translate="navAbout">À Propos</a>
+                <a href="form.html" class="nav-link active" data-translate="navAdd">Ajouter</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=1600&h=400&fit=crop" alt="Paris Restaurant Scene" class="banner-image">
+        <div class="banner-overlay"></div>
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <section class="form-section">
+                <h2 data-translate="addRestaurantTitle">Ajouter un Nouveau Restaurant</h2>
+                
+                <form id="restaurant-form" class="restaurant-form" action="data.php" method="POST" accept-charset="UTF-8">
+                    <div class="form-group">
+                        <label for="name" class="form-label"><span data-translate="restaurantName">Nom du Restaurant</span> <span data-translate="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="arrondissement" class="form-label"><span data-translate="arrondissement">Arrondissement</span> <span data-translate="required">*</span></label>
+                            <select id="arrondissement" name="arrondissement" class="form-select" required>
+                                <option value="" data-translate="selectOption">Sélectionnez</option>
+                                <option value="1" data-translate="arr1">1er - Louvre</option>
+                                <option value="2" data-translate="arr2">2e - Bourse</option>
+                                <option value="3" data-translate="arr3">3e - Temple</option>
+                                <option value="4" data-translate="arr4">4e - Hôtel-de-Ville</option>
+                                <option value="5" data-translate="arr5">5e - Panthéon</option>
+                                <option value="6" data-translate="arr6">6e - Luxembourg</option>
+                                <option value="7" data-translate="arr7">7e - Palais-Bourbon</option>
+                                <option value="8" data-translate="arr8">8e - Élysée</option>
+                                <option value="9" data-translate="arr9">9e - Opéra</option>
+                                <option value="10" data-translate="arr10">10e - Entrepôt</option>
+                                <option value="11" data-translate="arr11">11e - Popincourt</option>
+                                <option value="12" data-translate="arr12">12e - Reuilly</option>
+                                <option value="13" data-translate="arr13">13e - Gobelins</option>
+                                <option value="14" data-translate="arr14">14e - Observatoire</option>
+                                <option value="15" data-translate="arr15">15e - Vaugirard</option>
+                                <option value="16" data-translate="arr16">16e - Passy</option>
+                                <option value="17" data-translate="arr17">17e - Batignolles-Monceau</option>
+                                <option value="18" data-translate="arr18">18e - Butte-Montmartre</option>
+                                <option value="19" data-translate="arr19">19e - Buttes-Chaumont</option>
+                                <option value="20" data-translate="arr20">20e - Ménilmontant</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="neighborhood" class="form-label" data-translate="neighborhood">Quartier</label>
+                            <input type="text" id="neighborhood" name="neighborhood" class="form-input" data-translate="neighborhoodPlaceholder" placeholder="ex: Le Marais, Saint-Germain...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" class="form-label"><span data-translate="fullAddress">Adresse Complète</span> <span data-translate="required">*</span></label>
+                        <textarea id="address" name="address" class="form-textarea" rows="3" required data-translate="addressPlaceholder" placeholder="Rue, numéro, code postal Paris"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label" data-translate="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" data-translate="phonePlaceholder" placeholder="01 42 xx xx xx">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="form-label" data-translate="website">Site Web</label>
+                            <input type="url" id="website" name="website" class="form-input" data-translate="websitePlaceholder" placeholder="https://...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cuisine_type" class="form-label" data-translate="cuisineType">Type de Cuisine</label>
+                        <input type="text" id="cuisine_type" name="cuisine_type" class="form-input" data-translate="cuisinePlaceholder" placeholder="ex: Française traditionnelle, Bistrot, Brasserie...">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lunch_price_min" class="form-label" data-translate="lunchPriceMin">Prix Menu Midi (Min) €</label>
+                            <input type="number" id="lunch_price_min" name="lunch_price_min" class="form-input" step="0.50" min="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lunch_price_max" class="form-label" data-translate="lunchPriceMax">Prix Menu Midi (Max) €</label>
+                            <input type="number" id="lunch_price_max" name="lunch_price_max" class="form-input" step="0.50" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes" class="form-label" data-translate="notesComments">Notes et Commentaires</label>
+                        <textarea id="notes" name="notes" class="form-textarea" rows="4" data-translate="notesPlaceholder" placeholder="Spécialités, ambiance, particularités du menu du jour..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservation_info" class="form-label" data-translate="reservationInfo">Informations de Réservation</label>
+                        <textarea id="reservation_info" name="reservation_info" class="form-textarea" rows="3" data-translate="reservationPlaceholder" placeholder="Réservation recommandée, accepte les groupes, horaires d'ouverture..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" data-translate="addRestaurant">Ajouter le Restaurant</button>
+                        <button type="reset" class="btn btn-secondary" data-translate="reset">Réinitialiser</button>
+                    </div>
+                </form>
+
+                <div id="form-message" class="form-message" style="display: none;"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footerText">&copy; 2025 Prix Fixe Paris. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
